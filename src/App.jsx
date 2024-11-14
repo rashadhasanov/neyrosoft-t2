@@ -21,13 +21,14 @@ function App() {
     },
   ]);
 
-  const temizle = () => {
-    localStorage.clear("basketArr");
-  };
-
   const [basket, setBasket] = useState(
     JSON.parse(localStorage.getItem("basketArr")) || []
   );
+
+  const temizle = () => {
+    setBasket([]);
+  };
+
   return (
     <div>
       <Products products={products} basket={basket} setBasket={setBasket} />

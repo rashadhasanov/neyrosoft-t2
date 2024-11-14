@@ -5,18 +5,14 @@ function BasketCard({ data, basket, setBasket }) {
 
   const plus = (id) => {
     const product = newBasket.find((el) => el.id === id);
-    if (product) {
-      product.count += 1;
-    }
+    product.count += 1;
     localStorage.setItem("basketArr", JSON.stringify(newBasket));
     setBasket(newBasket);
   };
 
   const minus = (id) => {
     const product = newBasket.find((el) => el.id === id);
-    if (product) {
-      product.count -= 1;
-    }
+    product.count -= 1;
     localStorage.setItem("basketArr", JSON.stringify(newBasket));
     setBasket(newBasket);
   };

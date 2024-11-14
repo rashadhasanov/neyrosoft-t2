@@ -1,9 +1,13 @@
 import React from "react";
 
 function ProductCard({ data, basket, products, setBasket }) {
+
   let newBasket = [...basket];
+
   const addTocart = (id) => {
+
     let checkBasket = newBasket.find((el) => el.id === id);
+    
     if (checkBasket) {
       checkBasket.count += 1;
     } else {
@@ -15,6 +19,7 @@ function ProductCard({ data, basket, products, setBasket }) {
     setBasket(newBasket);
     localStorage.setItem("basketArr", JSON.stringify(newBasket));
   };
+
   return (
     <div className="card">
       <p>{data?.title}</p>
